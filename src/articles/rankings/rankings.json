@@ -1,6 +1,0 @@
-{
-  "layout": "layouts/article.njk",
-  "type": "ranking",
-  "tags": [],
-  "permalink": "/rankings/{{ page.fileSlug }}/index.html"
-}

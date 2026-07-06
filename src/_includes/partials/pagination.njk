@@ -1,7 +1,0 @@
-{%- if totalPages > 1 %}
-<nav class="pager" aria-label="ページネーション">
-  {%- if pagerPrevUrl %}<a class="pager-prev" href="{{ pagerPrevUrl }}" rel="prev">← 前へ</a>{% endif %}
-  <span class="pager-status">{{ pagerCurrent }} / {{ totalPages }}</span>
-  {%- if pagerNextUrl %}<a class="pager-next" href="{{ pagerNextUrl }}" rel="next">次へ →</a>{% endif %}
-</nav>
-{%- endif %}

@@ -1,29 +1,73 @@
-# picksearch
+# 雑録ノート
 
-Amazonアソシエイト向けの静的サイト。[Eleventy](https://www.11ty.dev/)でMarkdown記事をビルドし、GitHub Pagesにデプロイする。
-
-設計方針の詳細は [docs/site-architecture-proposal.md](docs/site-architecture-proposal.md) を参照。
+暮らし・旅行・グルメ・テクノロジー・健康・エンタメなど、ジャンルを問わず記事を量産できる、
+自作の静的HTMLブログジェネレーターです。フレームワークに頼らず、Node.js の素朴なスクリプトで
+Markdown記事をHTMLへ変換します。アフィリエイトリンクは含まない、純粋なブログ形式です。
 
 ## セットアップ
 
 ```bash
 npm install
-npm run serve   # http://localhost:8080 でプレビュー
-npm run build   # _site/ に静的ファイルを出力
+npm run build   # content/ 以下を dist/ にビルド
+npm run serve   # dist/ を http://localhost:8080 でプレビュー
 ```
 
-## 記事の追加
+## ディレクトリ構成
 
-1. `src/articles/reviews/`（レビュー）、`src/articles/comparisons/`（比較）、`src/articles/rankings/`（ランキング）のいずれかに Markdown ファイルを作成する。
-2. front matter に `title` / `description` / `category` / `tags` / 商品情報（`product` または `items`）を記述する。既存記事（`*-sample.md`）を雛形としてコピーすると早い。
-3. `category` は `src/_data/categories.json` に定義済みの slug を使う。新規カテゴリを追加する場合はここに1件足すだけでよい。
-4. カテゴリ一覧・タグ一覧・関連記事・`sitemap.xml`・検索インデックスはビルド時に自動生成される。手動更新は不要。
+```
+content/
+  site.json       # サイト全体の設定（タイトル、説明文、本番URLなど）
+  genres.json     # ジャンル一覧（オールジャンル対応。ここに追加すればジャンルが増やせる）
+  posts/*.md      # 記事本体（Markdown + フロントマター）
+templates/        # HTMLテンプレート（layout / home / post / genre / 404 / 部品）
+public/           # そのまま出力にコピーされる静的ファイル（CSS・JS・画像）
+scripts/
+  build.js        # content/ を読み込み dist/ にHTMLを生成するビルドスクリプト
+  serve.js        # dist/ をプレビューするだけの軽量サーバー
+  new-post.js     # 記事の下書きファイルを量産するためのCLI
+dist/             # ビルド成果物（gitignore対象。npm run build で生成）
+```
 
-## 公開前に変更が必要な設定値
+## 記事を量産する
 
-- `src/_data/site.json`: `baseUrl`（独自ドメイン）、`amazonAssociateTag`（Amazonアソシエイトタグ）、`defaultOgImage` などをプレースホルダーから実際の値に置き換える。
-- 独自ドメインを使う場合は `src/CNAME` にドメイン名のみを記載したファイルを追加する（`.eleventy.js`が自動でpassthroughコピーする）。
+新しい記事の下書きを作るには以下を実行します。
 
-## デプロイ
+```bash
+npm run new-post -- "記事タイトル" ジャンルID
+```
 
-`.github/workflows/deploy.yml` が `main` ブランチへのpushをトリガーにビルドし、GitHub Pagesへデプロイする。リポジトリの Settings > Pages で "GitHub Actions" をソースに設定しておくこと。
+`content/posts/` にフロントマター付きのMarkdownファイルが生成されるので、本文を書いて
+`npm run build` を実行すれば自動的にHTML化されます。同じ手順を繰り返すだけで、
+ジャンルを問わず記事を大量に追加していけます。
+
+### フロントマターの項目
+
+```yaml
+---
+title: "記事タイトル"
+slug: "url-slug"
+description: "検索結果やSNSシェア時に表示される要約文（120文字程度）"
+genre: "life"        # content/genres.json に定義したジャンルID
+tags: ["タグ1", "タグ2"]
+date: "2026-07-01"
+---
+```
+
+### ジャンルを追加する
+
+`content/genres.json` に `{ "id": "...", "name": "...", "description": "..." }` を追記するだけで、
+新しいジャンルの一覧ページ（`/genre/<id>/`）が自動生成されます。
+
+## SEO / モバイル対応
+
+- 記事・トップ・ジャンルページごとに `title` / `description` / OGP / Twitterカード / canonical を自動生成
+- 記事ページには `BlogPosting` の構造化データ（JSON-LD）、トップページには `WebSite` の構造化データを出力
+- `sitemap.xml` / `robots.txt` / `feed.xml`（RSS）を自動生成
+- モバイルファーストのレスポンシブCSS（1カラム→2カラム→3カラム）、ハンバーガーメニュー対応
+- 外部フォント・重いJSライブラリなし。CSSとJSは最小限で高速表示を重視
+
+## 本番公開前に変更が必要な項目
+
+`content/site.json` の `baseUrl` はプレースホルダー（`https://example.com`）です。
+実際に公開するドメインが決まったら、この値を書き換えてから `npm run build` してください
+（canonical URL・OGP・sitemap.xml・feed.xmlに反映されます）。
