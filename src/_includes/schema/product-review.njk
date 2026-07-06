@@ -1,4 +1,5 @@
 {%- if product %}
+{%- set affiliateUrl = product.asin | amazonUrl %}
 <script type="application/ld+json">
 {{ {
   "@context": "https://schema.org",
@@ -8,7 +9,7 @@
   "description": description,
   "offers": {
     "@type": "Offer",
-    "url": product.amazonUrl,
+    "url": affiliateUrl,
     "priceCurrency": "JPY",
     "price": product.price,
     "availability": "https://schema.org/InStock"

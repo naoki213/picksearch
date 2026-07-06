@@ -15,7 +15,7 @@
         "image": {{ (site.baseUrl + entry.image) | dump | safe }},
         "offers": {
           "@type": "Offer",
-          "url": {{ entry.amazonUrl | dump | safe }},
+          "url": {{ (entry.asin | amazonUrl) | dump | safe }},
           "priceCurrency": "JPY",
           "price": {{ entry.price | dump | safe }},
           "availability": "https://schema.org/InStock"

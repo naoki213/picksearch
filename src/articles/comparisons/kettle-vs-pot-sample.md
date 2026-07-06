@@ -11,14 +11,12 @@ items:
     asin: "B000000001"
     price: 3980
     image: /assets/images/sample-kettle.jpg
-    amazonUrl: "https://www.amazon.co.jp/dp/B000000001"
     pros: ["沸騰が速い", "コンパクト"]
     cons: ["保温機能なし"]
   - name: "サンプル電気ポット 1.2L"
     asin: "B000000002"
     price: 6980
     image: /assets/images/sample-pot.jpg
-    amazonUrl: "https://www.amazon.co.jp/dp/B000000002"
     pros: ["保温ができる", "大容量"]
     cons: ["本体が大きい"]
 ---

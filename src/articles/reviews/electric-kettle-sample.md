@@ -12,7 +12,6 @@ product:
   price: 3980
   rating: 4.5
   image: /assets/images/sample-kettle.jpg
-  amazonUrl: "https://www.amazon.co.jp/dp/B000000001"
 ---
 このページはテンプレート確認用のサンプル記事です。実記事を投入する際は、この構成（見出し・メリット/デメリット・まとめ）を踏襲してください。
 

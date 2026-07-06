@@ -10,7 +10,7 @@
     {%- if product.price %}
     <p class="product-box-price">¥{{ product.price | formatPrice }}</p>
     {%- endif %}
-    <a class="amazon-button" href="{{ product.amazonUrl or (product.asin | amazonUrl) }}" rel="sponsored noopener" target="_blank">
+    <a class="amazon-button" href="{{ product.asin | amazonUrl }}" rel="sponsored noopener" target="_blank">
       Amazonで見る
     </a>
   </div>
