@@ -1,0 +1,10 @@
+{%- if listItems and listItems.length %}
+<div class="article-grid">
+  {%- for item in listItems %}
+  {% include "partials/article-card.njk" %}
+  {%- endfor %}
+</div>
+{%- else %}
+<p class="empty-state">まだ記事がありません。</p>
+{%- endif %}
+{% include "partials/pagination.njk" %}

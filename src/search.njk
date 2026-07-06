@@ -1,0 +1,23 @@
+---
+title: "検索"
+description: "商品名やキーワードでサイト内の記事を検索できます。"
+permalink: "/search/index.html"
+---
+{% extends "layouts/base.njk" %}
+{% set breadcrumbs = [{ name: "トップ", url: "/" }, { name: title, url: null }] %}
+{% block head %}{% include "schema/breadcrumb.njk" %}{% endblock %}
+{% block content %}
+<div class="wrap">
+  {% include "partials/breadcrumbs.njk" %}
+  <h1>{{ title }}</h1>
+  <form class="search-form" id="search-form">
+    <input type="search" id="search-input" name="q" placeholder="商品名やキーワードで探す" aria-label="サイト内検索">
+    <button type="submit">検索</button>
+  </form>
+  <p id="search-status" class="search-status" aria-live="polite"></p>
+  <div id="search-results" class="article-grid"></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/assets/js/search.js" defer></script>
+{% endblock %}

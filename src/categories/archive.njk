@@ -1,0 +1,26 @@
+---
+pagination:
+  data: collections.categoryArchivePages
+  size: 1
+  alias: archivePage
+permalink: "{{ archivePage | archiveUrl('/category/') }}"
+---
+{% extends "layouts/base.njk" %}
+{% set categoryObj = categories | categoryBySlug(archivePage.key) %}
+{% set title = (categoryObj.name if categoryObj else archivePage.key) + "の記事一覧" %}
+{% set description = categoryObj.description if categoryObj else "" %}
+{% set breadcrumbs = [{ name: "トップ", url: "/" }, { name: "カテゴリ一覧", url: "/categories/" }, { name: categoryObj.name if categoryObj else archivePage.key, url: null }] %}
+{% block head %}{% include "schema/breadcrumb.njk" %}{% endblock %}
+{% block content %}
+<div class="wrap">
+  {% include "partials/breadcrumbs.njk" %}
+  <h1>{{ title }}</h1>
+  {%- if description %}<p>{{ description }}</p>{% endif %}
+  {% set listItems = archivePage.items %}
+  {% set totalPages = archivePage.totalPages %}
+  {% set pagerCurrent = archivePage.pageNumber %}
+  {% set pagerPrevUrl = archivePage | archiveSiblingUrl('/category/', -1) %}
+  {% set pagerNextUrl = archivePage | archiveSiblingUrl('/category/', 1) %}
+  {% include "partials/listing-grid.njk" %}
+</div>
+{% endblock %}

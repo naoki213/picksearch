@@ -1,0 +1,23 @@
+---
+pagination:
+  data: collections.tagArchivePages
+  size: 1
+  alias: archivePage
+permalink: "{{ archivePage | archiveUrl('/tag/') }}"
+---
+{% extends "layouts/base.njk" %}
+{% set title = "「" + archivePage.key + "」の記事一覧" %}
+{% set breadcrumbs = [{ name: "トップ", url: "/" }, { name: "タグ一覧", url: "/tags/" }, { name: archivePage.key, url: null }] %}
+{% block head %}{% include "schema/breadcrumb.njk" %}{% endblock %}
+{% block content %}
+<div class="wrap">
+  {% include "partials/breadcrumbs.njk" %}
+  <h1>{{ title }}</h1>
+  {% set listItems = archivePage.items %}
+  {% set totalPages = archivePage.totalPages %}
+  {% set pagerCurrent = archivePage.pageNumber %}
+  {% set pagerPrevUrl = archivePage | archiveSiblingUrl('/tag/', -1) %}
+  {% set pagerNextUrl = archivePage | archiveSiblingUrl('/tag/', 1) %}
+  {% include "partials/listing-grid.njk" %}
+</div>
+{% endblock %}

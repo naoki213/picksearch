@@ -1,0 +1,13 @@
+{% extends "layouts/base.njk" %}
+{% block content %}
+<div class="wrap">
+  {% include "partials/breadcrumbs.njk" %}
+  <article class="prose page-content">
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+  </article>
+</div>
+{% endblock %}
+{% block head %}
+{% include "schema/breadcrumb.njk" %}
+{% endblock %}

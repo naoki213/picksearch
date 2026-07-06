@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": site.name,
+  "url": site.baseUrl,
+  "description": site.description,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": site.baseUrl + "/search/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+} | jsonld | safe }}
+</script>

@@ -1,0 +1,20 @@
+---
+title: "タグ一覧"
+description: "記事に付けられたタグの一覧です。"
+permalink: "/tags/index.html"
+---
+{% extends "layouts/base.njk" %}
+{% set breadcrumbs = [{ name: "トップ", url: "/" }, { name: title, url: null }] %}
+{% block head %}{% include "schema/breadcrumb.njk" %}{% endblock %}
+{% block content %}
+<div class="wrap">
+  {% include "partials/breadcrumbs.njk" %}
+  <h1>{{ title }}</h1>
+  <p>{{ description }}</p>
+  <ul class="tag-cloud">
+    {%- for tag in collections.articles | allTags %}
+    <li><a href="/tag/{{ tag }}/">#{{ tag }}</a></li>
+    {%- endfor %}
+  </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{%- if product %}
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": product.name,
+  "image": [ site.baseUrl + product.image ],
+  "description": description,
+  "offers": {
+    "@type": "Offer",
+    "url": product.amazonUrl,
+    "priceCurrency": "JPY",
+    "price": product.price,
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": product.rating,
+      "bestRating": "5"
+    },
+    "author": { "@type": "Organization", "name": site.organization.name },
+    "datePublished": publishDate
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": product.rating,
+    "reviewCount": 1
+  }
+} | jsonld | safe }}
+</script>
+{%- endif %}
