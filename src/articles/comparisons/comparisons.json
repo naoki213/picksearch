@@ -1,6 +1,0 @@
-{
-  "layout": "layouts/article.njk",
-  "type": "comparison",
-  "tags": [],
-  "permalink": "/comparisons/{{ page.fileSlug }}/index.html"
-}
