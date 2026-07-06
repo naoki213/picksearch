@@ -10,7 +10,7 @@ export function renderHome({ site, genres, posts }) {
   <section class="section">
     <h2 class="section__title">新着記事</h2>
     <div class="post-grid">
-      ${posts.map((p) => postCard(p, genres)).join("")}
+      ${posts.map((p) => postCard(p, genres, site)).join("")}
     </div>
   </section>`;
 

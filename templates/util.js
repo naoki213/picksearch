@@ -13,6 +13,11 @@ export function formatDate(dateStr) {
   return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
 }
 
+export function withBase(site, p) {
+  const base = site.basePath || "";
+  return `${base}${p}`;
+}
+
 export function slugify(str) {
   return String(str)
     .trim()

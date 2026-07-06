@@ -1,5 +1,5 @@
 import { renderLayout } from "./layout.js";
-import { escapeHtml, formatDate } from "./util.js";
+import { escapeHtml, formatDate, withBase } from "./util.js";
 import { postCard } from "./components.js";
 
 export function renderPost({ site, genres, genre, post, posts }) {
@@ -10,7 +10,7 @@ export function renderPost({ site, genres, genre, post, posts }) {
   const content = `
   <article class="post">
     <header class="post__header">
-      <p class="post__genre"><a href="/genre/${genre.id}/">${escapeHtml(genre.name)}</a></p>
+      <p class="post__genre"><a href="${withBase(site, `/genre/${genre.id}/`)}">${escapeHtml(genre.name)}</a></p>
       <h1 class="post__title">${escapeHtml(post.title)}</h1>
       <div class="post__meta">
         <time datetime="${post.date}">${formatDate(post.date)}</time>
@@ -31,7 +31,7 @@ export function renderPost({ site, genres, genre, post, posts }) {
       ? `<section class="section">
     <h2 class="section__title">関連記事</h2>
     <div class="post-grid">
-      ${related.map((p) => postCard(p, genres)).join("")}
+      ${related.map((p) => postCard(p, genres, site)).join("")}
     </div>
   </section>`
       : ""

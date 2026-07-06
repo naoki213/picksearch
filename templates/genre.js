@@ -10,7 +10,7 @@ export function renderGenre({ site, genres, genre, posts }) {
     <div class="post-grid">
       ${
         posts.length
-          ? posts.map((p) => postCard(p, genres)).join("")
+          ? posts.map((p) => postCard(p, genres, site)).join("")
           : `<p class="empty-state">このジャンルの記事は準備中です。</p>`
       }
     </div>
