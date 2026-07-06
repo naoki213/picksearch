@@ -1,0 +1,29 @@
+{%- if items and items.length %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": {{ title | dump | safe }},
+  "itemListElement": [
+    {%- for entry in items %}
+    {
+      "@type": "ListItem",
+      "position": {{ entry.rank or loop.index }},
+      "item": {
+        "@type": "Product",
+        "name": {{ entry.name | dump | safe }},
+        "image": {{ (site.baseUrl + entry.image) | dump | safe }},
+        "offers": {
+          "@type": "Offer",
+          "url": {{ (entry.asin | amazonUrl) | dump | safe }},
+          "priceCurrency": "JPY",
+          "price": {{ entry.price | dump | safe }},
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- endif %}

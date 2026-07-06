@@ -1,0 +1,26 @@
+---
+title: "カテゴリ一覧"
+description: "商品ジャンルごとのカテゴリ一覧です。"
+permalink: "/categories/index.html"
+---
+{% extends "layouts/base.njk" %}
+{% set breadcrumbs = [{ name: "トップ", url: "/" }, { name: title, url: null }] %}
+{% block head %}{% include "schema/breadcrumb.njk" %}{% endblock %}
+{% block content %}
+<div class="wrap">
+  {% include "partials/breadcrumbs.njk" %}
+  <h1>{{ title }}</h1>
+  <p>{{ description }}</p>
+  <ul class="category-grid">
+    {%- for cat in categories %}
+    <li class="category-card">
+      <a href="/category/{{ cat.slug }}/">
+        <h2>{{ cat.name }}</h2>
+        <p>{{ cat.description }}</p>
+        <span class="category-count">{{ (collections.articles | filterByCategory(cat.slug)).length }}件の記事</span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</div>
+{% endblock %}

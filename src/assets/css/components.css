@@ -1,0 +1,309 @@
+/* ---- breadcrumbs ---- */
+.breadcrumbs {
+  margin: 1.25rem 0;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.4em;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: "›";
+  margin-left: 0.4em;
+}
+
+.breadcrumbs a {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover { text-decoration: underline; }
+
+/* ---- hero ---- */
+.hero {
+  background: var(--color-surface);
+  padding: 3rem 0;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-lead {
+  color: var(--color-muted);
+  max-width: 50ch;
+  margin: 0 auto 1.5rem;
+}
+
+.hero-search {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.hero-search input,
+.search-form input {
+  flex: 1;
+  padding: 0.7em 1em;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+.hero-search button,
+.search-form button {
+  padding: 0.7em 1.4em;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--color-text);
+  color: #fff;
+  font-weight: 600;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 480px;
+  margin: 1.25rem 0;
+}
+
+.search-status {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* ---- category grid ---- */
+.category-grid {
+  list-style: none;
+  margin: 0 0 2.5rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.category-card a {
+  display: block;
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color 0.15s ease;
+}
+
+.category-card a:hover { border-color: var(--color-accent); }
+.category-card p { color: var(--color-muted); font-size: 0.9rem; margin-bottom: 0.5em; }
+.category-count { font-size: 0.8rem; color: var(--color-muted); }
+
+/* ---- article grid / card ---- */
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 0 0 2rem;
+}
+
+.article-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.article-card-link {
+  display: block;
+  color: var(--color-text);
+  text-decoration: none;
+  height: 100%;
+}
+
+.article-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: var(--color-surface);
+}
+
+.article-card-body { padding: 1rem; }
+
+.article-card-category {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-accent-dark);
+  margin-bottom: 0.4em;
+}
+
+.article-card-title {
+  font-size: 1rem;
+  margin: 0 0 0.4em;
+}
+
+.article-card-description {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin: 0 0 0.6em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article-card-date {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.empty-state { color: var(--color-muted); }
+
+/* ---- article page ---- */
+.article-header { margin-bottom: 1.5rem; }
+
+.article-meta-type {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  padding: 0.25em 0.7em;
+  border-radius: 999px;
+  margin-bottom: 0.6em;
+}
+
+.article-dates {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+.article-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  padding: 0;
+  margin: 0.8em 0 0;
+}
+
+.article-tags a {
+  font-size: 0.8rem;
+  background: var(--color-surface);
+  border-radius: 999px;
+  padding: 0.3em 0.8em;
+  text-decoration: none;
+  color: var(--color-muted);
+}
+
+.prose, .article-content {
+  max-width: 72ch;
+}
+
+.article-content h2 { margin-top: 1.8em; }
+
+/* ---- product box / amazon button ---- */
+.product-box {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  max-width: 72ch;
+}
+
+.product-box-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.product-box-name { font-weight: 700; margin: 0 0 0.3em; }
+.product-box-rating { color: var(--color-accent-dark); font-size: 0.9rem; margin: 0 0 0.3em; }
+.product-box-price { font-size: 1.1rem; font-weight: 700; margin: 0 0 0.6em; }
+
+.amazon-button {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.6em 1.4em;
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+
+.amazon-button:hover { background: var(--color-accent-dark); }
+
+/* ---- comparison / ranking items ---- */
+.comparison-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.comparison-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.pros-cons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.pros-cons h4 { font-size: 0.9rem; margin: 0 0 0.3em; }
+.pros-cons ul { margin: 0; padding-left: 1.2em; font-size: 0.9rem; }
+
+/* ---- related articles ---- */
+.related-articles { margin-top: 2.5rem; }
+
+/* ---- tag cloud ---- */
+.tag-cloud {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  padding: 0;
+}
+
+.tag-cloud a {
+  background: var(--color-surface);
+  border-radius: 999px;
+  padding: 0.4em 1em;
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+/* ---- pagination ---- */
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+}
+
+.pager a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.pager-status { color: var(--color-muted); }

@@ -1,0 +1,7 @@
+[
+  { "label": "トップ", "url": "/" },
+  { "label": "カテゴリ一覧", "url": "/categories/" },
+  { "label": "ランキング", "url": "/rankings/" },
+  { "label": "比較記事", "url": "/comparisons/" },
+  { "label": "検索", "url": "/search/" }
+]
