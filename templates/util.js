@@ -23,6 +23,18 @@ export function withBase(site, p) {
   return `${base}${p}`;
 }
 
+export function amazonUrl(site, asin) {
+  const domain = site.amazonDomain || "amazon.co.jp";
+  const tag = site.amazonAssociateTag;
+  const base = `https://www.${domain}/dp/${asin}/`;
+  return tag ? `${base}?tag=${encodeURIComponent(tag)}` : base;
+}
+
+export function formatPrice(price, site) {
+  const currency = site.amazonDomain === "amazon.com" ? "$" : "¥";
+  return `${currency}${Number(price).toLocaleString("en-US")}`;
+}
+
 export function slugify(str) {
   return String(str)
     .trim()

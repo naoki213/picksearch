@@ -1,6 +1,6 @@
 import { renderLayout } from "./layout.js";
-import { escapeHtml, formatDate, withBase } from "./util.js";
-import { postCard } from "./components.js";
+import { escapeHtml, formatDate, withBase, amazonUrl } from "./util.js";
+import { postCard, productGrid } from "./components.js";
 
 export function renderPost({ site, genres, genre, post, posts }) {
   const related = posts
@@ -25,6 +25,7 @@ export function renderPost({ site, genres, genre, post, posts }) {
     <div class="post__body">
       ${post.html}
     </div>
+    ${productGrid(post.products, site)}
   </article>
   ${
     related.length
