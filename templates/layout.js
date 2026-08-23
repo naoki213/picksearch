@@ -10,6 +10,7 @@ export function renderLayout({
   canonicalPath,
   ogImage,
   jsonLd,
+  hero,
   content,
 }) {
   const pageTitle = title ? `${title} | ${site.title}` : site.title;
@@ -41,7 +42,7 @@ ${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script
 <header class="site-header">
   <div class="container site-header__inner">
     <a href="${withBase(site, "/")}" class="site-header__logo">${escapeHtml(site.title)}</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="メニューを開閉する">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -49,12 +50,13 @@ ${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script
     ${genreNav(genres, activeGenre, site)}
   </div>
 </header>
+${hero || ""}
 <main class="container">
 ${content}
 </main>
 <footer class="site-footer">
   <div class="container">
-    <p>&copy; ${new Date().getFullYear()} ${escapeHtml(site.title)}</p>
+    <p>&copy; ${new Date().getFullYear()} ${escapeHtml(site.title)}. All rights reserved.</p>
   </div>
 </footer>
 <script src="${withBase(site, "/js/main.js")}" defer></script>

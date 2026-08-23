@@ -47,5 +47,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`dist/ を配信中: http://localhost:${PORT}`);
+  console.log(`Serving dist/ at http://localhost:${PORT}`);
 });

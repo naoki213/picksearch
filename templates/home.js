@@ -1,14 +1,20 @@
 import { renderLayout } from "./layout.js";
+import { escapeHtml, withBase } from "./util.js";
 import { postCard } from "./components.js";
 
 export function renderHome({ site, genres, posts }) {
+  const hero = `
+  <section class="hero-full" style="background-image: linear-gradient(180deg, rgba(20, 24, 32, 0.35), rgba(15, 18, 24, 0.65)), url('${withBase(site, "/images/hero.png")}')">
+    <div class="container hero-full__inner">
+      <h1>${escapeHtml(site.title)}</h1>
+      <p>${escapeHtml(site.description)}</p>
+      <a href="#latest" class="hero-full__cta">Read the latest stories</a>
+    </div>
+  </section>`;
+
   const content = `
-  <section class="hero">
-    <h1>${site.title}</h1>
-    <p>${site.description}</p>
-  </section>
-  <section class="section">
-    <h2 class="section__title">新着記事</h2>
+  <section class="section" id="latest">
+    <h2 class="section__title">Latest Articles</h2>
     <div class="post-grid">
       ${posts.map((p) => postCard(p, genres, site)).join("")}
     </div>
@@ -30,6 +36,7 @@ export function renderHome({ site, genres, posts }) {
     description: site.description,
     canonicalPath: "/",
     jsonLd,
+    hero,
     content,
   });
 }

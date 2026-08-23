@@ -1,42 +1,42 @@
 [
   {
     "id": "life",
-    "name": "暮らし",
-    "description": "日々の生活を少し便利に、心地よくするヒントやアイデアを紹介します。"
+    "name": "Life",
+    "description": "Tips and ideas to make everyday living a little easier and more comfortable."
   },
   {
     "id": "travel",
-    "name": "旅行",
-    "description": "国内外の旅先情報やおすすめスポット、旅の準備に役立つ情報をまとめます。"
+    "name": "Travel",
+    "description": "Destinations, hidden gems, and practical advice for planning your next trip."
   },
   {
     "id": "gourmet",
-    "name": "グルメ",
-    "description": "話題のお店やレシピ、食にまつわるさまざまな話題をお届けします。"
+    "name": "Food",
+    "description": "Buzzworthy restaurants, recipes, and everything else food-related."
   },
   {
     "id": "tech",
-    "name": "テクノロジー",
-    "description": "ガジェットやITトレンド、便利なサービスをわかりやすく解説します。"
+    "name": "Technology",
+    "description": "Gadgets, IT trends, and useful services, explained simply."
   },
   {
     "id": "health",
-    "name": "健康",
-    "description": "体と心の健康を保つための知識や習慣について紹介します。"
+    "name": "Health",
+    "description": "Knowledge and habits for keeping your body and mind in good shape."
   },
   {
     "id": "entertainment",
-    "name": "エンタメ",
-    "description": "映画・音楽・ドラマ・本など、エンタメにまつわる話題を扱います。"
+    "name": "Entertainment",
+    "description": "Movies, music, TV, books, and everything else worth talking about."
   },
   {
     "id": "business",
-    "name": "ビジネス",
-    "description": "働き方やキャリア、お金にまつわる話題を取り上げます。"
+    "name": "Business",
+    "description": "Careers, work styles, and money — topics for getting ahead."
   },
   {
     "id": "hobby",
-    "name": "趣味",
-    "description": "カメラ、読書、アウトドアなど、趣味の世界を深掘りします。"
+    "name": "Hobbies",
+    "description": "A deep dive into cameras, reading, the outdoors, and other pastimes."
   }
 ]

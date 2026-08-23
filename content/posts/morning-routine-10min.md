@@ -1,38 +1,38 @@
 ---
-title: "朝10分で変わる。忙しい人のための時短モーニングルーティン"
+title: "10 Minutes to a Better Morning: A Time-Saving Routine for Busy People"
 slug: "morning-routine-10min"
-description: "忙しい毎日でも続けられる、朝10分でできるモーニングルーティンを紹介。時短しながら1日を気持ちよくスタートするコツをまとめました。"
+description: "A 10-minute morning routine you can actually stick to, even on your busiest days. Here's how to start the day feeling good without losing time."
 genre: "life"
-tags: ["モーニングルーティン", "時短", "習慣化"]
+tags: ["morning routine", "time-saving", "habits"]
 date: "2026-07-01"
 ---
 
-「朝はいつもバタバタで、気づいたら家を飛び出している」——そんな人は多いのではないでしょうか。実は、モーニングルーティンは長時間かける必要はありません。たった10分でも、順番と工夫次第で1日の始まりが大きく変わります。
+"My mornings are always chaotic, and before I know it I'm rushing out the door" — sound familiar? The truth is, a morning routine doesn't need to take long. Even ten minutes, spent in the right order, can completely change how your day begins.
 
-## なぜ朝の10分が重要なのか
+## Why the First 10 Minutes Matter
 
-朝の時間帯は、脳がもっとも整理されている状態だと言われています。この時間にほんの少し手をかけるだけで、1日の集中力や気分の安定度が変わってきます。逆に、バタバタしたまま家を出ると、その慌ただしさが午前中いっぱい尾を引いてしまうことも少なくありません。
+Your mind is said to be at its clearest right after waking up. Spending just a little intentional time here can shape your focus and mood for the whole day. On the other hand, if you rush straight out the door, that scattered feeling has a way of following you well into the afternoon.
 
-## 10分でできるモーニングルーティンの例
+## A Sample 10-Minute Morning Routine
 
-以下は、実際に多くの人が取り入れやすいとされる時短ルーティンの一例です。
+Here's an easy, time-saving routine that works for a lot of people.
 
-- **1分:** カーテンを開けて日光を浴びる
-- **2分:** コップ1杯の水を飲む
-- **3分:** 軽くストレッチをして体を起こす
-- **2分:** 今日やることを3つだけ書き出す
-- **2分:** 身支度を整える
+- **1 min:** Open the curtains and get some sunlight
+- **2 min:** Drink a glass of water
+- **3 min:** Do a light stretch to wake up your body
+- **2 min:** Write down the three things you need to do today
+- **2 min:** Get ready for the day
 
-ポイントは「完璧を目指さないこと」です。全部できなくても、1つか2つ続けるだけで十分に効果を感じられます。
+The key is not aiming for perfection. Even if you can't do everything on the list, sticking with just one or two steps is enough to feel a difference.
 
-## 続けるためのコツ
+## Tips for Making It Stick
 
-1. 前日の夜に翌朝やることを決めておく
-2. スマートフォンを見る前に体を動かす
-3. できなかった日があっても自分を責めない
+1. Decide the night before what you'll do the next morning
+2. Move your body before you check your phone
+3. Don't beat yourself up over a day you miss
 
-習慣化のコツは「ハードルを下げること」に尽きます。10分がしんどい日は5分でも構いません。小さな成功体験を積み重ねることが、長続きさせる一番の近道です。
+The secret to building a habit is lowering the bar. If ten minutes feels like too much on a given day, five is fine. Small wins, repeated often, are the fastest path to a routine that actually lasts.
 
-## まとめ
+## Takeaway
 
-モーニングルーティンは、特別な道具も長い時間も必要ありません。今日紹介した10分の流れを、自分の生活リズムに合わせてアレンジしながら、無理なく続けてみてください。
+A good morning routine doesn't require special equipment or a lot of time. Try adapting the ten-minute flow above to fit your own rhythm, and ease into it at whatever pace works for you.

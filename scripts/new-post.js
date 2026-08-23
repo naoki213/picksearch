@@ -10,14 +10,14 @@ const GENRES_FILE = path.join(__dirname, "..", "content", "genres.json");
 const [, , title, genre = "life"] = process.argv;
 
 if (!title) {
-  console.error('使い方: npm run new-post -- "記事タイトル" ジャンルID');
-  console.error("ジャンルID一覧は content/genres.json を参照してください。");
+  console.error('Usage: npm run new-post -- "Post Title" genreId');
+  console.error("See content/genres.json for the list of genre IDs.");
   process.exit(1);
 }
 
 const genres = JSON.parse(fs.readFileSync(GENRES_FILE, "utf-8"));
 if (!genres.some((g) => g.id === genre)) {
-  console.error(`ジャンルID "${genre}" は content/genres.json に存在しません。`);
+  console.error(`Genre ID "${genre}" was not found in content/genres.json.`);
   process.exit(1);
 }
 
@@ -26,22 +26,22 @@ const date = new Date().toISOString().slice(0, 10);
 const filePath = path.join(POSTS_DIR, `${slug}.md`);
 
 if (fs.existsSync(filePath)) {
-  console.error(`既に同じslugのファイルが存在します: ${filePath}`);
+  console.error(`A file with this slug already exists: ${filePath}`);
   process.exit(1);
 }
 
 const template = `---
 title: "${title}"
 slug: "${slug}"
-description: "ここに記事の要約（120文字程度）を書いてください。"
+description: "Write a short summary of the post here (about 160 characters)."
 genre: "${genre}"
 tags: []
 date: "${date}"
 ---
 
-ここから本文を書いてください。
+Start writing the post here.
 `;
 
 fs.mkdirSync(POSTS_DIR, { recursive: true });
 fs.writeFileSync(filePath, template, "utf-8");
-console.log(`記事の下書きを作成しました: ${filePath}`);
+console.log(`Draft created: ${filePath}`);

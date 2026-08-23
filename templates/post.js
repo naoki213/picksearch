@@ -14,7 +14,7 @@ export function renderPost({ site, genres, genre, post, posts }) {
       <h1 class="post__title">${escapeHtml(post.title)}</h1>
       <div class="post__meta">
         <time datetime="${post.date}">${formatDate(post.date)}</time>
-        <span>${post.readingMinutes}分で読了</span>
+        <span>${post.readingMinutes} min read</span>
       </div>
       ${
         post.tags && post.tags.length
@@ -29,7 +29,7 @@ export function renderPost({ site, genres, genre, post, posts }) {
   ${
     related.length
       ? `<section class="section">
-    <h2 class="section__title">関連記事</h2>
+    <h2 class="section__title">Related Articles</h2>
     <div class="post-grid">
       ${related.map((p) => postCard(p, genres, site)).join("")}
     </div>

@@ -10,7 +10,7 @@ export function postCard(post, genres, site) {
       <p class="post-card__excerpt">${escapeHtml(post.description || "")}</p>
       <div class="post-card__meta">
         <time datetime="${post.date}">${formatDate(post.date)}</time>
-        <span>${post.readingMinutes}分で読了</span>
+        <span>${post.readingMinutes} min read</span>
       </div>
     </a>
   </article>`;
@@ -18,9 +18,9 @@ export function postCard(post, genres, site) {
 
 export function genreNav(genres, activeId, site) {
   return `
-  <nav class="genre-nav" aria-label="ジャンル">
+  <nav class="genre-nav" aria-label="Categories">
     <ul>
-      <li><a href="${withBase(site, "/")}"${!activeId ? ' class="is-active"' : ""}>トップ</a></li>
+      <li><a href="${withBase(site, "/")}"${!activeId ? ' class="is-active"' : ""}>Home</a></li>
       ${genres
         .map(
           (g) =>
