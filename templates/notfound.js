@@ -1,11 +1,12 @@
 import { renderLayout } from "./layout.js";
+import { withBase } from "./util.js";
 
 export function renderNotFound({ site, genres }) {
   const content = `
   <section class="section">
-    <h1 class="section__title">ページが見つかりません</h1>
-    <p>お探しのページは移動または削除された可能性があります。</p>
-    <p><a href="/">トップページに戻る</a></p>
+    <h1 class="section__title">Page Not Found</h1>
+    <p>The page you're looking for may have been moved or removed.</p>
+    <p><a href="${withBase(site, "/")}">Back to homepage</a></p>
   </section>`;
 
   return renderLayout({
@@ -13,7 +14,7 @@ export function renderNotFound({ site, genres }) {
     genres,
     activeGenre: null,
     title: "404 Not Found",
-    description: "ページが見つかりません。",
+    description: "This page could not be found.",
     canonicalPath: "/404.html",
     content,
   });

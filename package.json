@@ -1,8 +1,8 @@
 {
-  "name": "zatsuroku-note",
+  "name": "everyday-notes",
   "private": true,
   "type": "module",
-  "description": "オールジャンルのブログ記事を大量に生成できる自作の静的HTMLジェネレーター",
+  "description": "A hand-built static HTML generator for publishing blog posts across any genre",
   "scripts": {
     "build": "node scripts/build.js",
     "serve": "node scripts/serve.js",

@@ -116,7 +116,7 @@ function build() {
   for (const post of posts) {
     const genre = genres.find((g) => g.id === post.genre);
     if (!genre) {
-      console.warn(`警告: 記事「${post.title}」の genre "${post.genre}" が content/genres.json に存在しません。`);
+      console.warn(`Warning: genre "${post.genre}" for post "${post.title}" was not found in content/genres.json.`);
       continue;
     }
     writeFile(
@@ -141,7 +141,7 @@ function build() {
   );
   writeFile(path.join(DIST_DIR, "feed.xml"), renderFeed({ site, posts }));
 
-  console.log(`ビルド完了: 記事 ${posts.length}件 / ジャンル ${genres.length}件 -> dist/`);
+  console.log(`Build complete: ${posts.length} post(s) / ${genres.length} genre(s) -> dist/`);
 }
 
 build();

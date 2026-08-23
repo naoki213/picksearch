@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST_DIR = path.join(__dirname, "..", "dist");
 const PORT = process.env.PORT || 8080;
+const { basePath = "" } = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "content", "site.json"), "utf-8"));
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -22,7 +23,8 @@ const MIME = {
 
 const server = http.createServer((req, res) => {
   const requestPath = decodeURIComponent(req.url.split("?")[0]);
-  const relativePath = requestPath.endsWith("/") ? `${requestPath}index.html` : requestPath;
+  const unprefixed = basePath && requestPath.startsWith(basePath) ? requestPath.slice(basePath.length) || "/" : requestPath;
+  const relativePath = unprefixed.endsWith("/") ? `${unprefixed}index.html` : unprefixed;
   const filePath = path.join(DIST_DIR, relativePath);
 
   if (!filePath.startsWith(DIST_DIR)) {
@@ -45,5 +47,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`dist/ を配信中: http://localhost:${PORT}`);
+  console.log(`Serving dist/ at http://localhost:${PORT}`);
 });

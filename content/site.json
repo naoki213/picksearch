@@ -1,8 +1,9 @@
 {
-  "title": "雑録ノート",
-  "description": "暮らし・旅行・グルメ・テクノロジー・健康・エンタメまで、日々の気づきをジャンルを問わず綴るオールジャンルブログです。",
+  "title": "Everyday Notes",
+  "description": "Ideas and stories on everyday life, travel, food, technology, health, and entertainment — a little of everything.",
   "baseUrl": "https://example.com",
-  "language": "ja",
-  "author": "雑録ノート編集部",
+  "basePath": "/picksearch",
+  "language": "en",
+  "author": "Everyday Notes Editorial",
   "twitter": ""
 }
