@@ -54,4 +54,6 @@ The most affordable of the three, with USB-C charging, a detachable blade for ea
 
 If you already know you'll use it every morning, the Vitantonio is the one to buy once and stop thinking about. If you're not sure yet, start with the Asani or Rowa — both cover the basics well enough to tell you whether a portable blender earns a permanent spot on your counter.
 
+Once you've picked one, here are [5 two-minute smoothie recipes](/picksearch/posts/quick-smoothie-recipes-portable-blender/) sized to fit a standard portable blender jar.
+
 *Prices shown are approximate as of the time of writing and may vary — check the current price on Amazon before buying.*
